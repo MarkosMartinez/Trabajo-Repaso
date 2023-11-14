@@ -5,8 +5,6 @@ use App\Models\Formulario;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 class CrearInformeController extends Controller
@@ -45,7 +43,7 @@ class CrearInformeController extends Controller
         'nombre' => $request->input('nombre'),
         'asunto' => $request->input('asunto'),
         'contenido' => $request->input('contenido'),
-        'user_id' => auth()->user()->id, // Asignar el ID del usuario autenticado como foreign key
+        'user_id' => auth()->user()->id
     ]);
 
     // Redireccionar a una página de éxito o mostrar un mensaje de confirmación

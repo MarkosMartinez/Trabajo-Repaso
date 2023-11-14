@@ -66,9 +66,9 @@
                     <form action="{{ route('informar') }}" method="post" class="p-3 form">
                         @csrf
                         <div class="form-group">
-                            <label for="nombre_usuario" class="form-label">Nombre de usuario</label>
-                            <input type="text" id="nombre_usuario" name="nombre_usuario" value="{{ $user->name }}"
-                                class="form-control" readonly>
+                            <label for="nombre" class="form-label">Nombre de usuario</label>
+                            <input type="text" id="nombre" name="nombre" value="{{ $user->name }}"
+                                class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="asunto" class="form-label">Asunto</label>
