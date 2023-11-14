@@ -22,7 +22,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'view'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/informar', [CrearInformeController::class, 'view'])->middleware(['auth', 'verified'])->name('informar');
+Route::get('/informar', [CrearInformeController::class, 'verForm'])->middleware(['auth', 'verified'])->name('informar');
+Route::post('/informar', [CrearInformeController::class, 'procesarForm'])->middleware(['auth', 'verified'])->name('informar');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

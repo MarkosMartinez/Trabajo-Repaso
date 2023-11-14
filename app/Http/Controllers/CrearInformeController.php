@@ -10,7 +10,7 @@ use App\Models\User;
 
 class CrearInformeController extends Controller
 {
-    public function view(Request $request): View
+    public function verForm(Request $request): View
     {
         $user = $request->user();
         $user = User::find($user->id);
@@ -18,4 +18,10 @@ class CrearInformeController extends Controller
             'user' => $user
         ]);
     }
+
+    public function procesarForm(Request $request)
+{
+    $user = $request->user();
+    $user = User::find($user->id);
+}
 }
