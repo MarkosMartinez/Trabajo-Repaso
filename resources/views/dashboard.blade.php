@@ -18,7 +18,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 card-ultimologueo">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    Logueado correctamente! Ultimo logueo: {{ $last_login ?? 'Nunca'}}
+                    Logueado correctamente! Ultimo logueo: {{ Auth::user()->last_login ?? 'Nunca'}}
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                             <p><b>Asunto:</b> {{ $formulario->asunto }}</p>
                             <p><b>Contenido:</b> {{ $formulario->contenido }}</p>
                             <p><b>Contenido:</b> {{ $formulario->contenido }}</p>
-                            <p style="font-size: small;"><b>Usuario Real:</b>{{ $usuarios->where('id', $formulario->user_id)->first()->name }}</p>
+                            <p style="font-size: small;"><b>Usuario Real:</b> {{ $usuarios->where('id', $formulario->user_id)->first()->name }}</p>
                         </div>
                     </div>
             </div>
