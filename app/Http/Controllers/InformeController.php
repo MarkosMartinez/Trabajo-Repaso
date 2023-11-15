@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\User;
 
-class CrearInformeController extends Controller
+class InformeController extends Controller
 {
     public function verForm(Request $request): View
     {
@@ -46,7 +46,6 @@ class CrearInformeController extends Controller
         'user_id' => auth()->user()->id
     ]);
 
-    // Redireccionar a una página de éxito o mostrar un mensaje de confirmación
-    return redirect("/dashboard")->with('success', 'Formulario enviado correctamente');
+    return redirect("/dashboard");
 }
 }
