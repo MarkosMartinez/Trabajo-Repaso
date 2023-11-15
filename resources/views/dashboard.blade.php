@@ -31,7 +31,6 @@
                             <h3><b>Nombre:</b> {{ $formulario->nombre }}</h3>
                             <p><b>Asunto:</b> {{ $formulario->asunto }}</p>
                             <p><b>Contenido:</b> {{ $formulario->contenido }}</p>
-                            <p><b>Contenido:</b> {{ $formulario->contenido }}</p>
                             <p style="font-size: small;"><b>Usuario Real:</b> {{ $usuarios->where('id', $formulario->user_id)->first()->name }}</p>
                         </div>
                     </div>
