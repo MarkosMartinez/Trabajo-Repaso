@@ -22,8 +22,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'view'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/informar', [InformeController::class, 'verForm'])->middleware(['auth', 'verified'])->name('informar');
-Route::post('/informar', [InformeController::class, 'procesarForm'])->middleware(['auth', 'verified'])->name('informar');
+Route::get('/informe', [InformeController::class, 'verForm'])->middleware(['auth', 'verified'])->name('informe');
+Route::post('/informe', [InformeController::class, 'procesarForm'])->middleware(['auth', 'verified'])->name('informe');
+Route::delete('/informe/{formulario}', [InformeController::class, 'eliminar'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

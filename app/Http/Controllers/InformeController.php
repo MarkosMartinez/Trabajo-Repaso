@@ -18,6 +18,13 @@ class InformeController extends Controller
         ]);
     }
 
+    public function eliminar(Formulario $formulario)
+    {
+        $formulario->delete();
+        return redirect("/dashboard");
+    }
+
+
     public function procesarForm(Request $request)
 {
 
