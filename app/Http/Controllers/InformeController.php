@@ -18,7 +18,7 @@ class InformeController extends Controller
         ]);
     }
 
-    public function eliminar(Formulario $formulario)
+    public function eliminarForm(Formulario $formulario)
     {
         $formulario->delete();
         return redirect("/dashboard");

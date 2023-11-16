@@ -24,7 +24,7 @@ Route::get('/dashboard', [DashboardController::class, 'view'])->middleware(['aut
 
 Route::get('/informe', [InformeController::class, 'verForm'])->middleware(['auth', 'verified'])->name('informe');
 Route::post('/informe', [InformeController::class, 'procesarForm'])->middleware(['auth', 'verified'])->name('informe');
-Route::delete('/informe/{formulario}', [InformeController::class, 'eliminar'])->middleware(['auth', 'verified']);
+Route::delete('/informe/{formulario}', [InformeController::class, 'eliminarForm'])->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
