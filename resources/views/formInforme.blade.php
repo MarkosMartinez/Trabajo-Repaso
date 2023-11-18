@@ -67,16 +67,16 @@
                         @csrf
                         <div class="form-group">
                             <label for="nombre" class="form-label">Nombre de usuario</label>
-                            <input type="text" id="nombre" name="nombre" value="{{ $user->name }}"
+                            <input type="text" id="nombre" name="nombre" value="{{ isset($formulario) ? $formulario->nombre : $user->name }}"
                                 class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="asunto" class="form-label">Asunto</label>
-                            <input type="text" id="asunto" name="asunto" class="form-control">
+                            <input type="text" id="asunto" name="asunto" value="{{ isset($formulario) ? $formulario->asunto : '' }}" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="contenido" class="form-label">Contenido</label>
-                            <textarea id="contenido" name="contenido" class="form-control"></textarea>
+                            <textarea id="contenido" name="contenido" class="form-control">{{ isset($formulario) ? $formulario->contenido : '' }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>

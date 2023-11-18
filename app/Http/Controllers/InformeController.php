@@ -9,13 +9,23 @@ use App\Models\User;
 
 class InformeController extends Controller
 {
-    public function verForm(Request $request): View
+    public function verForm(Request $request, $id = null): View
     {
-        $user = $request->user();
-        $user = User::find($user->id);
-        return view('crearInforme', [
-            'user' => $user
-        ]);
+        if ($id) {
+            $user = $request->user();
+            $user = User::find($user->id);
+            $formulario = Formulario::find($id);
+            return view('formInforme', [
+                'user' => $user,
+                'formulario' => $formulario
+            ]);
+        } else {
+            $user = $request->user();
+            $user = User::find($user->id);
+            return view('formInforme', [
+                'user' => $user
+            ]);
+        }
     }
 
     public function eliminarForm(Formulario $formulario)

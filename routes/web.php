@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'view'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/informe', [InformeController::class, 'verForm'])->middleware(['auth', 'verified'])->name('informe');
+Route::get('/informe/{id?}', [InformeController::class, 'verForm'])->middleware(['auth', 'verified'])->name('informe');
 Route::post('/informe', [InformeController::class, 'procesarForm'])->middleware(['auth', 'verified'])->name('informe');
 Route::delete('/informe/{formulario}', [InformeController::class, 'eliminarForm'])->middleware(['auth', 'verified']);
 
