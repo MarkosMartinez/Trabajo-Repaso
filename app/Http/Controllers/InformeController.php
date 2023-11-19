@@ -56,12 +56,21 @@ class InformeController extends Controller
 
     // Opcion 2:
     // Crear y almacenar el nuevo formulario utilizando el método create
-    $formulario = Formulario::create([
-        'nombre' => $request->input('nombre'),
-        'asunto' => $request->input('asunto'),
-        'contenido' => $request->input('contenido'),
-        'user_id' => auth()->user()->id
-    ]);
+    if ($request->has('id')) {
+        $formulario = Formulario::find($request->input('id'));
+        $formulario->update([
+            'nombre' => $request->input('nombre'),
+            'asunto' => $request->input('asunto'),
+            'contenido' => $request->input('contenido'),
+        ]);
+    } else {
+        $formulario = Formulario::create([
+            'nombre' => $request->input('nombre'),
+            'asunto' => $request->input('asunto'),
+            'contenido' => $request->input('contenido'),
+            'user_id' => auth()->user()->id
+        ]);
+    }
 
     return redirect("/dashboard");
 }
