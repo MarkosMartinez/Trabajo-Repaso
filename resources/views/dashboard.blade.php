@@ -37,7 +37,7 @@
                 @endif
                 <p style="font-size: small;"><b>Usuario Real:</b> {{ $usuarios->where('id', $formulario->user_id)->first()->name }}</p>
             </div>
-            <form method="POST" action='/informe/{{ $formulario }}'>
+            <form method="POST" action='/informe/{{ $formulario->id }}'>
             @csrf
             @method('DELETE')
                 <!--Imagen de la papelera-->
