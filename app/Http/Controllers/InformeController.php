@@ -56,7 +56,7 @@ class InformeController extends Controller
 
     // Opcion 2:
     // Crear y almacenar el nuevo formulario utilizando el método create
-    if ($request->has('id')) {
+    if ($request->input('id') != null) {
         $formulario = Formulario::find($request->input('id'));
         $formulario->update([
             'nombre' => $request->input('nombre'),
